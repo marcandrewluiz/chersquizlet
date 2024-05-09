@@ -15,14 +15,14 @@ if st.session_state.setup_mode:
     question = st.text_input("Question:")
     answer = st.text_area("Answer:")
 
-    if st.button("Add Question"):
+    if st.button("Add Question", use_container_width=True):
         if question and answer:
             st.session_state.quiz.append({"question": question, "answer": answer})
             st.success("Question added!")
         else:
             st.warning("Please provide both a question and an answer.")
 
-    if st.button("Start Quiz") and st.session_state.quiz:
+    if st.button("Start Quiz", use_container_width=True) and st.session_state.quiz:
         st.session_state.setup_mode = False
         st.session_state.total_questions = len(st.session_state.quiz)
     else:
@@ -42,7 +42,7 @@ else:
 
         user_answer = st.text_input("Your answer:")
 
-        if st.button("Submit"):
+        if st.button("Submit", use_container_width=True):
             if user_answer.strip().lower() == current_q["answer"].strip().lower():
                 st.session_state.score += 1
 
