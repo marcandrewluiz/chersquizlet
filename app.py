@@ -22,7 +22,7 @@ if st.session_state.setup_mode:
         else:
             st.warning("Please provide both a question and an answer.")
 
-    if st.button("Start Quiz", use_container_width=True) and st.session_state.quiz:
+    if st.button("Start Quiz", use_container_width=True, type="primary") and st.session_state.quiz:
         st.session_state.setup_mode = False
         st.session_state.total_questions = len(st.session_state.quiz)
     else:
